@@ -281,7 +281,7 @@ int fichierExisteDeja(const char *nomFichier, const char *listFile) {
 void creerListProd(const char *productionRepertoire, const char *listFile) {
     FILE *file = fopen(listFile, "a");
     if (file == NULL) {
-        printf("Erreur lors de l'ouverture du fichier listProd.txt.\n");
+        printf("Erreur lors de l'ouverture du fichier.\n");
         return;
     }
 
@@ -306,7 +306,7 @@ void creerListProd(const char *productionRepertoire, const char *listFile) {
 
         // Vérifier si le fichier existe déjà dans listProd.txt
         if (fichierExisteDeja(ent->d_name, listFile)) {
-            printf("Le fichier %s existe deja dans prodList.txt. Il ne sera pas ajoute.\n", ent->d_name);
+            printf("Le fichier %s existe deja dans %s. Il ne sera pas ajoute.\n", ent->d_name, listFile);
             continue;
         }
 
@@ -323,7 +323,7 @@ void creerListProd(const char *productionRepertoire, const char *listFile) {
 
 
     fclose(file);
-    printf("Le fichier listProd.txt a ete mis a jour avec succes.\n");
+    printf("Le fichier %s a ete mis a jour avec succes.\n", listFile);
 }
 
 
