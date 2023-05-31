@@ -10,6 +10,7 @@
 #include "fonction.h"
 #define MAX_FILENAME_LENGTH 512
 #define MAX_LINE_LENGTH 512
+char* fichier_log_f = "log/log.txt";
 
 
 void copier_fichiers(const char *dossierSource, const char *dossierDestination) {
@@ -68,19 +69,24 @@ void copier_fichiers(const char *dossierSource, const char *dossierDestination) 
 }
 
 
-int save_data_log(const char *data, int taille){
+int save_data_log(const char *fichier_log, const char *data){
     FILE* fichier = NULL;
-    fichier = fopen("init.txt", "w+");
+    time_t temps_actuel;
+    struct tm *heure_locale;
+    // Obtenir le temps actuel
+    temps_actuel = time(NULL);
+    fichier = fopen(fichier_log, "a");
     if(fichier == NULL){
         printf("Erreur lors de l'ouverture de fichier\n.");
         return EXIT_FAILURE;
     }else{
-//        for (int i = 0; i < taille ; i++) {
-//            fprintf(fichier, "%s", data[i]);
-//        }
-//        fprintf(fichier, "%s", "\n");
-        fprintf(fichier, "%s\n", data);
-        printf("shohdvosdv");
+        fprintf(fichier, "%s\t", data);
+        // Récupérer la date de modification du fichier
+        char dateTimeString[MAX_LINE_LENGTH];
+        struct tm *modificationTime = localtime(&temps_actuel);
+        strftime(dateTimeString, sizeof(dateTimeString), "%Y-%m-%d %H:%M:%S", modificationTime);
+
+        fprintf(fichier, "--- %s\n",dateTimeString);
     }
 
     fclose(fichier);
@@ -101,7 +107,7 @@ FILE* synchroList(const char* file1, const char* file2) {
     if (fp1 == NULL || fp2 == NULL ) {
 
         printf("Erreur lors de l'ouverture des fichiers.\n");
-
+        save_data_log(fichier_log_f, "Module Synchro : Erreur lors de l'ouverture des deux fichiers.");
         return NULL;
 
     }
@@ -119,7 +125,7 @@ FILE* synchroList(const char* file1, const char* file2) {
     if (fpOutput == NULL) {
 
         printf("Erreur lors de la création du fichier de sortie.\n");
-
+        save_data_log(fichier_log_f, "Module Synchro : Erreur lors de la création du fichier de sortie.");
         fclose(fp1);
 
         fclose(fp2);
@@ -167,6 +173,7 @@ FILE* synchroList(const char* file1, const char* file2) {
     fclose(fpOutput);
 
     printf("Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier\n");
+    save_data_log(fichier_log_f, "Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.");
 
     return fpOutput;
 
@@ -183,6 +190,7 @@ int copy_list(char* nomfichier, char*nomdossiersource, char* nomdossierdestinati
 
     if(f == NULL){
         printf("Erreur lors de l'ouverture du fichier : %s\n", nomfichier);
+        save_data_log(fichier_log_f, "Module Copy : Erreur lors de l'ouverture du fichier %s.");
         return 1;
     }
 
@@ -193,7 +201,7 @@ int copy_list(char* nomfichier, char*nomdossiersource, char* nomdossierdestinati
         sscanf(ligne, "%s", nom_fic);
 
         printf("%s\n", nom_fic);
-
+        save_data_log(fichier_log_f,  "Module Copy : copie d'un fichier. ");
         if(copier_fichier_vers_dossier(nom_fic, nomdossiersource, nomdossierdestination) != 0){
             return 0 ;
         }
@@ -219,17 +227,21 @@ int copier_fichier_vers_dossier(char* nomfichier, char* nomdossiersource, char* 
     strcat(nom_fichier_destination, "/");
     strcat(nom_fichier_destination, nomfichier);
 
+    printf("Nom du fichier => %s\n", nomfichier);
+
     fsource = fopen(nom_fichier_source, "r") ;
 
     if(fsource == NULL){
-        printf("Erreur lors de l'ouverture de du fichier source : %s\n", nom_fichier_source);
+        printf("Erreur lors de l'ouverture du fichier source : %s\n", nom_fichier_source);
+        save_data_log(fichier_log_f, "Module copy: Erreur lors de l'ouverture du fichier source.");
         return 1 ;
     }
 
     fdestination = fopen(nom_fichier_destination, "w") ;
 
     if(fdestination == NULL){
-        printf("Erreur lors de l'ouverture de du fichier destination : %s\n", nom_fichier_destination);
+        printf("Erreur lors de l'ouverture du fichier destination : %s\n", nom_fichier_destination);
+        save_data_log(fichier_log_f, "Module copy: Erreur lors de l'ouverture de du fichier destination.");
         return 1 ;
     }
 
