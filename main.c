@@ -84,6 +84,7 @@ void * copy_list_thread(void *arg){
     }
     if(valeur==0){
         printf("Copy de list de fichier avec succès\n");
+        creerListProd("Integration", fichierInt);
         save_data_log(fichier_log, "Module copy: Copy de list de fichier avec succès");
     }else{
         printf("Erreur lors de la copie du fichier\n");

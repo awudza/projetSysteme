@@ -73,3 +73,33 @@ Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
 Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
 Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
 Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:05:09
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 15:22:39
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:22:39
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:22:39
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 15:25:49
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:25:49
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:25:49
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 15:44:44
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:44:44
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:44:44
