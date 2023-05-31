@@ -1,0 +1,75 @@
+Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:13:33
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le Erreur lors de l'ouverture des deux fichiersfichier listeAcopier.	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module Copy file: Copie du fichier %s	--- 2023-05-31 14:13:33
+Module copy: Erreur lors de l'ouverture de du fichier source.	--- 2023-05-31 14:13:33
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:13:33
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:31:55
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:31:55
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:33:07
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:33:07
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:35:08
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:35:08
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:35:08
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:42:13
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:42:13
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:42:13
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:47:43
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:47:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:47:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:47:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:47:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:47:43
+Module copy: Erreur lors de l'ouverture du fichier source.	--- 2023-05-31 14:47:43
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:47:43
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:48:43
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:48:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:48:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:48:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:48:43
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:48:43
+Module copy: Erreur lors de l'ouverture du fichier source.	--- 2023-05-31 14:48:43
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:48:43
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:51:29
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:51:29
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:51:29
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:51:29
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:51:29
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:51:29
+Module copy: Erreur lors de l'ouverture du fichier source.	--- 2023-05-31 14:51:29
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:51:29
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:52:41
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:52:41
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:52:41
+Module copy: Erreur lors de l'ouverture de du fichier destination.	--- 2023-05-31 14:52:41
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:52:41
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 14:54:01
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 14:54:01
+Module Copy : copie d'un fichier. 	--- 2023-05-31 14:54:01
+Module copy: Erreur lors de l'ouverture du fichier source.	--- 2023-05-31 14:54:01
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 14:54:01
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 15:02:48
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 15:02:48
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:02:48
+Module copy: Erreur lors de l'ouverture de du fichier destination.	--- 2023-05-31 15:02:48
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:02:48
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 15:03:36
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 15:03:36
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:03:36
+Module copy: Erreur lors de l'ouverture de du fichier destination.	--- 2023-05-31 15:03:36
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:03:36
+Module test dispo: Serveur de production actif pour le transfère de donnée.	--- 2023-05-31 15:05:09
+Module Synchro : Comparaison terminée. Le résultat a été écrit dans le fichier listeAcopier.	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module Copy : copie d'un fichier. 	--- 2023-05-31 15:05:09
+Module copy: Copy de list de fichier avec succès	--- 2023-05-31 15:05:09

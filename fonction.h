@@ -5,8 +5,7 @@
 #ifndef PROJETSYSTEME_FONCTION_H
 #define PROJETSYSTEME_FONCTION_H
 
-int save_data_log(const char * data, int taille);
-
+int save_data_log(const char *fichier_log, const char *data);
 void copier_fichiers(const char *dossierSource, const char *dossierDestination);
 void *test_dispo(void *arg);
 
