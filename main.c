@@ -20,7 +20,7 @@ sem_t mutex;
 sem_t mutex2;
 sem_t sem;
 sem_t sem2;
-int actif = 0, prod = 0, back = 0;
+int actif = 0, prod = 0, back = 0, is_exec=0;
 const char* fichierProd = "prodList.txt";
 const char* fichierBack = "backList.txt";
 const char* fichierInt = "intList.txt";
@@ -29,24 +29,28 @@ char* nom_fichier_copie = "listeAcopier.txt";
 FILE *fichier_copie = NULL;
 
 void * production(void * arg){
-    P(mutex);
-    prod = 1;
-    back = 0;
-    creerListProd("Production", fichierProd);
-    V(mutex2);
-    sleep(120);
-    V(mutex);
+    if(is_exec==0){
+        P(mutex);
+        prod = 1;
+        back = 0;
+        is_exec = 1;
+        creerListProd("Production", fichierProd);
+        V(mutex2);
+        V(mutex);
+    }
     return NULL;
 }
 
 void * backup(void * arg){
-    P(mutex);
-    prod = 0;
-    back = 1;
-    creerListProd("Backup", fichierBack);
-    V(mutex2);
-    sleep(120);
-    V(mutex);
+    if(is_exec==0){
+        P(mutex);
+        prod = 0;
+        back = 1;
+        is_exec=1;
+        creerListProd("Backup", fichierBack);
+        V(mutex2);
+        V(mutex);
+    }
     return NULL;
 }
 
@@ -135,6 +139,8 @@ int main(){
     pthread_t backup_t;
     sem_init(&mutex, PTHREAD_PROCESS_SHARED, 1);
     sem_init(&mutex2, PTHREAD_PROCESS_SHARED, 0);
+    printf("\n\tPROJET DE GESTION D'UN SERVEUR D'INTÉGRATION\n");
+    printf("\t---------------------------------------------\n");
     if(pthread_create(&integration_t, NULL, (void *(*)(void *)) integration, NULL) != 0 ){
         fprintf(stderr, "Erreur lors de la création du thread d'intégration\n");
         exit(EXIT_FAILURE);
@@ -150,5 +156,9 @@ int main(){
     pthread_join(integration_t, (void **) &ptr1);
     pthread_join(production_t, (void **) &ptr2);
     pthread_join(backup_t, (void **) &ptr3);
+    printf("\n\tAFFICHAGE DES STATISTIQUES DU SERVEUR\n");
+    printf("\t----------------------------------------\n");
+    printf("\tOn a recu %d erreurs\n", get_nombre_erreurs());
+    printf("\tOn a recu %d fichiers\n", get_nombre_fichier_recu());
     return EXIT_SUCCESS;
 }

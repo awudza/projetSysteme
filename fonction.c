@@ -78,6 +78,7 @@ int save_data_log(const char *fichier_log, const char *data){
     fichier = fopen(fichier_log, "a");
     if(fichier == NULL){
         printf("Erreur lors de l'ouverture de fichier\n.");
+        enregistrer_erreur("Erreur lors de l'ouverture de fichier");
         return EXIT_FAILURE;
     }else{
         fprintf(fichier, "%s\t", data);
@@ -107,6 +108,7 @@ FILE* synchroList(const char* file1, const char* file2) {
     if (fp1 == NULL || fp2 == NULL ) {
 
         printf("Erreur lors de l'ouverture des fichiers.\n");
+        enregistrer_erreur("Erreur lors de l'ouverture des fichiers.");
         save_data_log(fichier_log_f, "Module Synchro : Erreur lors de l'ouverture des deux fichiers.");
         return NULL;
 
@@ -125,6 +127,7 @@ FILE* synchroList(const char* file1, const char* file2) {
     if (fpOutput == NULL) {
 
         printf("Erreur lors de la création du fichier de sortie.\n");
+        enregistrer_erreur("Erreur lors de la création du fichier de sortie.");
         save_data_log(fichier_log_f, "Module Synchro : Erreur lors de la création du fichier de sortie.");
         fclose(fp1);
 
@@ -190,6 +193,7 @@ int copy_list(char* nomfichier, char*nomdossiersource, char* nomdossierdestinati
 
     if(f == NULL){
         printf("Erreur lors de l'ouverture du fichier : %s\n", nomfichier);
+        enregistrer_erreur("Erreur lors de l'ouverture du fichier.");
         save_data_log(fichier_log_f, "Module Copy : Erreur lors de l'ouverture du fichier %s.");
         return 1;
     }
@@ -205,6 +209,7 @@ int copy_list(char* nomfichier, char*nomdossiersource, char* nomdossierdestinati
         if(copier_fichier_vers_dossier(nom_fic, nomdossiersource, nomdossierdestination) != 0){
             return 0 ;
         }
+        enregistrer_fichier_recu(nom_fic);
     }
 
     return 0 ;
@@ -233,6 +238,7 @@ int copier_fichier_vers_dossier(char* nomfichier, char* nomdossiersource, char* 
 
     if(fsource == NULL){
         printf("Erreur lors de l'ouverture du fichier source : %s\n", nom_fichier_source);
+        enregistrer_erreur("Erreur lors de l'ouverture du fichier source.");
         save_data_log(fichier_log_f, "Module copy: Erreur lors de l'ouverture du fichier source.");
         return 1 ;
     }
@@ -241,6 +247,7 @@ int copier_fichier_vers_dossier(char* nomfichier, char* nomdossiersource, char* 
 
     if(fdestination == NULL){
         printf("Erreur lors de l'ouverture du fichier destination : %s\n", nom_fichier_destination);
+        enregistrer_erreur("Erreur lors de l'ouverture du fichier destination.");
         save_data_log(fichier_log_f, "Module copy: Erreur lors de l'ouverture de du fichier destination.");
         return 1 ;
     }
@@ -324,6 +331,71 @@ void creerListProd(const char *productionRepertoire, const char *listFile) {
 
     fclose(file);
     printf("Le fichier %s a ete mis a jour avec succes.\n", listFile);
+}
+
+int get_nombre_erreurs(){
+    return nombre_ligne_fichier("log/stat_erreur.txt");
+}
+
+int get_nombre_fichier_recu(){
+    return nombre_ligne_fichier("log/stat_fichier_recu.txt");
+}
+
+int nombre_ligne_fichier(char* nomfichier){
+
+    FILE *fichier = fopen(nomfichier, "r");
+
+    if (fichier == NULL) {
+        printf("Erreur lors de l'ouverture du fichier.\n");
+        return 1;
+    }
+
+    int nombreLignes = 0;
+    char caractere;
+
+    while ((caractere = fgetc(fichier)) != EOF) {
+        if (caractere == '\n') {
+            nombreLignes++;
+        }
+    }
+
+    fclose(fichier); // Ferme le fichier
+
+    return nombreLignes;
+}
+
+int enregistrer_erreur(char* descriptif){
+    return ecrire_ligne_fin_fichier_stat(descriptif, "log/stat_erreur.txt");
+}
+
+int enregistrer_fichier_recu(char* nomfichier){
+    return ecrire_ligne_fin_fichier_stat(nomfichier, "log/stat_fichier_recu.txt");
+}
+
+int ecrire_ligne_fin_fichier_stat(char* ligne, char* nom_fichier){
+
+    FILE* f = NULL ;
+    time_t now;
+    struct tm *local_time;
+    char date_str[100];
+
+    now = time(NULL);
+    local_time = localtime(&now);
+
+    strftime(date_str, sizeof(date_str), "%d-%m-%Y, %H:%M:%S", local_time);
+
+    f = fopen(nom_fichier, "a");
+
+    if(f == NULL){
+        printf("Erreur lors de l'ouverture du fichier, pour l'ecriture en fin de fichier");
+        return 1;
+    }
+
+    fprintf(f,"%s > %s\n", date_str, ligne);
+
+    fclose(f);
+
+    return 0 ;
 }
 
 
