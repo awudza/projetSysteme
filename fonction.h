@@ -15,4 +15,11 @@ int copy_list(char* nomfichier, char*nomdossiersource, char* nomdossierdestinati
 int copier_fichier_vers_dossier(char* nomfichier, char* nomdossiersource, char* nomdossierdestination);
 int fichierExisteDeja(const char *nomFichier, const char *listFile);
 void creerListProd(const char *productionRepertoire, const char *listFile);
+int get_nombre_erreurs();
+int get_nombre_fichier_recu();
+int nombre_ligne_fichier(char* nomfichier);
+int enregistrer_erreur(char* descriptif);
+int enregistrer_fichier_recu(char* nomfichier);
+int ecrire_ligne_fin_fichier_stat(char* ligne, char* nom_fichier);
+
 #endif //PROJETSYSTEME_FONCTION_H
