@@ -1,6 +1,1 @@
-Livraisons.txt - 2023-06-01 14:16:02
-ListeDesClients.xlsx - 2023-06-01 14:16:02
-Stat.docx - 2023-06-01 14:16:02
-POOProjet2023.pdf - 2023-06-01 14:16:02
-ListeDesCommandes.docx - 2023-06-01 14:16:02
-ListeDesProduitsEnStock.txt - 2023-06-01 14:16:02
+

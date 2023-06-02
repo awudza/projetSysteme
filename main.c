@@ -71,7 +71,11 @@ void * test_disponibilite_thread(void *arg){
 
 void * synchro_list_thread(void *arg){
     P(sem);
-    fichier_copie = synchroList(fichierProd, fichierInt);
+    if(actif == 1){
+        fichier_copie = synchroList(fichierProd, fichierInt);
+    }else{
+        fichier_copie = synchroList(fichierBack, fichierInt);
+    }
     V(sem);
     V(sem2);
     return NULL;
@@ -128,6 +132,7 @@ void * integration(void *arg){
     pthread_join(thread_test, (void **) &ptr1);
     pthread_join(thread_synchro, (void **) &ptr2);
     pthread_join(thread_backup, (void **) &ptr3);
+    return NULL;
 }
 
 int main(){
